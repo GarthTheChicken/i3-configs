@@ -1,0 +1,47 @@
+!---Colors----
+!
+*background:  #20242C
+*foreground:  #B3B8C4
+
+!black
+*color0:#151515
+*color8:#5B5B5B
+
+!red
+*color1:#CC0000
+*color9:#EF2929
+
+!green
+*color2:#B7CE42
+*color10:#D4E777
+
+!yellow
+*color3:#e0a524
+*color11:#edB85c
+
+!blue
+*color4:#1D576D
+*color12:#31788E
+
+!magenta
+*color5:#97219C
+*color13:#A7248C
+
+!cyan
+*color6:#435D75
+*color14:#6E98A4
+
+!white
+*color7:#dedede
+*color15:#f2f2f2
+
+!urxvt settings
+!URxvt.depth: 32
+URxvt.buffered: true
+URxvt*scrollBar: false
+URxvt*font:  -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+URxvt*boldFont:  -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+URxvt*cursorUnderline: false
+URxvt.saveLines: 1000
