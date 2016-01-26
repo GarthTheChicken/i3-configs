@@ -187,6 +187,9 @@ exec numlockx on
 for_window [class="Thunderbird"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="feh"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
 
 #contrain floating window size
 floating_maximum_size 1680 x 1050
