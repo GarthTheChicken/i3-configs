@@ -39,9 +39,90 @@
 !URxvt.depth: 32
 URxvt.buffered: true
 URxvt*scrollBar: false
-URxvt*font:  -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
-URxvt*boldFont:  -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
-URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
-URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+!URxvt*font:  -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+!URxvt*boldFont:  -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+URxvt*font:  xft:Envy Code R:normal:autohint=false:size=9
+URxvt*boldFont:  xft:Envy Code R:normal:autohint=false:size=9
+!URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=10
+!URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=10
 URxvt*cursorUnderline: false
+URxvt.letterSpace: -2
 URxvt.saveLines: 1000
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+!clickable urls
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.colorUL: #86a2be
+
+
+
+
+!XTerm settings
+xterm*termName: xterm-256color
+xterm*faceName: Envy Code R:size=9:antialias=false
+!xterm*boldFont: Envy Code R:size=9;antialias=false
+!xterm*italicFont: Envy Code R:size=9;antialias=false
+! Forbid bold font faces; bold type is light blue.
+xterm*colorBDMode: true
+xterm*colorBD: rgb:82/a4/d3
+! Do not underscore text, underlined text is white.
+!XTerm*colorULMode: true
+xterm*colorUL: rgb:e4/e4/e4
+xterm*BorderWidth: 0
+xterm*loginshell: true
+xterm*saveLines: 4096
+xterm*bellIsUrgent: true
+!xterm*internalBorder: 6
+!xterm*titeInhibit: true
+! double-click to select whole URLs
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+!unbind Alt key
+xterm*metaSendsEscape: true
+!UTF-8 support
+xterm*locale: true
+
+xterm*background:rgb:20/24/2C
+xterm*foreground:rgb:B3/B8/C4
+
+!black
+xterm*color0:rgb:15/15/15
+xterm*color8:rgb:5B/5B/5B
+
+!red
+xterm*color1:rgb:CC/00/00
+xterm*color9:rgb:EF/29/29
+
+!green
+xterm*color2:rgb:B7/CE/42
+xterm*color10:rgb:D4/E7/77
+
+!yellow
+xterm*color3:rgb:e0/a5/24
+xterm*color11:rgb:ed/B8/5c
+
+!blue
+xterm*color4:rgb:1D/57/6D
+xterm*color12:rgb:31/78/8E
+
+!magenta
+xterm*color5:rgb:97/21/9C
+xterm*color13:rgb:A7/24/8C
+
+!cyan
+xterm*color6:rgb:43/5D/75
+xterm*color14:rgb:6E/98/A4
+
+!white
+xterm*color7:rgb:de/de/de
+xterm*color15:rgb:f2/f2/f2
+

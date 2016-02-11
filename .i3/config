@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec --no-startup-id urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -116,6 +116,20 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# set workspaces to specific monitors
+workspace 1 output DVI-0
+workspace 3 output DVI-0
+workspace 5 output DVI-0
+workspace 7 output DVI-0
+workspace 9 output DVI-0
+
+workspace 2 output DVI-1
+workspace 4 output DVI-1
+workspace 6 output DVI-1
+workspace 8 output DVI-1
+workspace 0 output DVI-1
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -179,17 +193,18 @@ bar {
 # autostart
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton --config ~/.compton.conf
-exec xscreensaver
-exec numlockx on
+exec --no-startup-id xscreensaver
+exec --no-startup-id numlockx on
 
 # floating windows
 #for_window [class="[.]*"] floating enable
 for_window [class="Thunderbird"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="feh"] floating enable
+for_window [class="Corebird"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-
+for_window [class="Mainwindow.py"] floating enable
 
 #contrain floating window size
 floating_maximum_size 1680 x 1050
@@ -218,3 +233,6 @@ client.urgent           #2f343a #900000 #ffffff #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 client.background       #ffffff
+
+#set keyboard delay and rate
+exec --no-startup-id xset r rate 200 25
