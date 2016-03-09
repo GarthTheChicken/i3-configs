@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Force Firefox to use Arc light theme to fix bad rendering of inputs and checkboxes in dark theme
+# Use until Firefox gets proper GTK3 support
+
+env GTK2_RC_FILES=/usr/share/themes/Arc/gtk-2.0/gtkrc GTK_DATA_PREFIX="" /usr/bin/firefox "$@" &
