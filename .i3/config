@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,10 +43,10 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id rofi -show run -font "pragmata 8" -fg "#EEE8D5" -bg "#073642" -bgalt "#002b36" -hlfg "#002b36" -hlbg "#657B83" -o 85
 bindsym $mod+d exec --no-startup-id rofi -show run -font "Futura BK BT Book 8" -separator-style "none" -lines "3" -width "30"  $(i3-color-rofi) 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -55,10 +55,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -67,7 +67,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -104,6 +104,19 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+
+#bindsym $mod+KP_1 workspace 1
+#bindsym $mod+KP_2 workspace 2
+#bindsym $mod+KP_3 workspace 3
+#bindsym $mod+KP_4 workspace 4
+#bindsym $mod+KP_5 workspace 5
+#bindsym $mod+KP_6 workspace 6
+#bindsym $mod+KP_7 workspace 7
+#bindsym $mod+KP_8 workspace 8
+#bindsym $mod+KP_9 workspace 9
+#bindsym $mod+KP_0 workspace 10
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -127,8 +140,12 @@ workspace 2 output DVI-1
 workspace 4 output DVI-1
 workspace 6 output DVI-1
 workspace 8 output DVI-1
-workspace 0 output DVI-1
+workspace 10 output DVI-1
 
+
+# https://www.reddit.com/r/i3wm/comments/460ggx/can_i_have_i3_always_display_virtual_desktops_17/
+ # Go to lowest empty workspace
+bindsym $mod+q exec ~/bin/nextworkspace
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -145,10 +162,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -182,7 +199,7 @@ bar {
 		separator #4c7899
 
 		focused_workspace  #00000000 #4c7899   #ffffff
-	        active_workspace   #00000000 #00000000 #222222
+	        active_workspace   #00000000 #00000000 #ffffff
         	inactive_workspace #00000000 #00000000 #888888
       		urgent_workspace   #00000000 #00000000 #900000
         	binding_mode       #00000000 #00000000 #900000
@@ -202,6 +219,9 @@ for_window [class="Thunderbird"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Corebird"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [class="NotifyOSDConfiguration"] floating enable
+for_window [class="Firefox" instance="Toplevel"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Mainwindow.py"] floating enable
@@ -213,7 +233,7 @@ floating_maximum_size 1680 x 1050
 new_window pixel 3
 
 # mouse
-focus_follows_mouse yes
+#focus_follows_mouse yes
 
 #gaps
 gaps inner 25
@@ -236,3 +256,10 @@ client.background       #ffffff
 
 #set keyboard delay and rate
 exec --no-startup-id xset r rate 200 25
+
+#spotify keybindings
+bindsym $mod+F9 exec ~/bin/spotify_remote.sh play
+bindsym $mod+F11 exec ~/bin/spotify_remote.sh pause
+bindsym $mod+F12 exec ~/bin/spotify_remote.sh next
+bindsym $mod+F10 exec ~/bin/spotify_remote.sh previous
+
